@@ -1,5 +1,49 @@
 {
   "name": "syzygy",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "lodash": "^4.17.11",
+    "react": "^16.8.4",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-dom": "^16.8.4",
+    "react-redux": "^6.0.1",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "ts-loader": "^6.0.4",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "version": "1.0.0",
+  "main": "syzygy.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "webpack",
+    "start": "webpack --watch --mode=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iRzLi/syzygy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iRzLi/syzygy/issues"
+  },
+  "homepage": "https://github.com/iRzLi/syzygy#readme",
+  "devDependencies": {
+    "typescript": "^3.5.3"
+  }
 }
