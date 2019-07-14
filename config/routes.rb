@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
 
   namespace :api,  defaults: {format: 'json'} do 
-    resources :users, only: [:create]
+    resources :users, only: [:create] 
+    get '/user/email_confirmation/:confirmation_token', to: 'users#email_confirmation'
+
     resource :session, only: [:create, :destroy]
   end
 

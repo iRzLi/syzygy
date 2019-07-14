@@ -11,6 +11,7 @@
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #  validated_account :boolean          default(FALSE)
+#  confirm_token     :string
 #
 
 class User < ApplicationRecord
@@ -28,6 +29,11 @@ class User < ApplicationRecord
         return user if BCrypt::Password.new(user.password_encrypt).is_password?(password)
     end
 
+    def self.find_by_confirm_token(token)
+        user = User.find_by_confirm_token(token)
+        return user if user
+    end
+
     def password=(password)
         @password = password 
         self.password_encrypt = BCrypt::Password.create(password)
@@ -42,6 +48,12 @@ class User < ApplicationRecord
         self.session_token = SecureRandom::urlsafe_base64
         self.save!
         self.session_token
+    end
+
+    def validate_account
+        self.validated_account = true
+        self.confirm_token = nil
+        self.save! 
     end
 
 end
