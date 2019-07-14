@@ -21,7 +21,9 @@ class User < ApplicationRecord
     validates :password, length: {minimum: 8}, allow_nil: true
 
     attr_accessor :password
-    after_initialize :ensure_session_token, :create_email_token
+    
+    before_create :create_email_token
+    after_initialize :ensure_session_token
 
     def self.find_by_credentials(email, password)
         user = User.find_by_email(email)
