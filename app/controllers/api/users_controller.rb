@@ -4,6 +4,7 @@ class Api::UsersController < ApplicationController
         user = User.new(user_params)
         if user.save
             login(user)
+            UserMailer.verification_email(user).deliver_now
             render json: ['User Logged In'], status: 200
         else 
             render json: user.errors_full_messages, status: 422

@@ -21,7 +21,7 @@ class User < ApplicationRecord
     validates :password, length: {minimum: 8}, allow_nil: true
 
     attr_accessor :password
-    after_initialize :ensure_session_token
+    after_initialize :ensure_session_token, :create_email_token
 
     def self.find_by_credentials(email, password)
         user = User.find_by_email(email)
@@ -29,10 +29,7 @@ class User < ApplicationRecord
         return user if BCrypt::Password.new(user.password_encrypt).is_password?(password)
     end
 
-    def self.find_by_confirm_token(token)
-        user = User.find_by_confirm_token(token)
-        return user if user
-    end
+ 
 
     def password=(password)
         @password = password 
@@ -42,6 +39,10 @@ class User < ApplicationRecord
 
     def ensure_session_token 
         self.session_token = SecureRandom::urlsafe_base64
+    end
+
+    def create_email_token
+        self.confirm_token = SecureRandom::urlsafe_base64
     end
 
     def reset_session_token
