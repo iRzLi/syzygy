@@ -2,18 +2,37 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <style>
-      /* Email styles need to be inline */
+    <style type='text/css' media="screen">
+      .font-style { font-family: sans-serif; }
+      .email-href{ text-decoration: none; }
+      .email-header{ 
+        display: flex; 
+        justify-content: center;
+        height: 60px;
+        background: green;
+        color: white;
+        align-items: center;
+      }
+
+      .email-main-content{
+        padding: 10px;
+      }
     </style>
   </head>
 
-  <body>
-    <h1> Thanks for signing up with Syzygy <%= @user.first_name %></h1>
-    <p>
+  <body style="margin: 0; padding: 0;">
+    <div class='email-header'>
+      <h1 class='font-style'> Welcome <%= @user.first_name.capitalize %></h1>
+    </div>
+    <div class='email-main-content'>
+    <p class='font-style'>
+        Thank you for signing up with Syzygy.
+        <br><br>
         To get all the benefits of Syzygy, please verify your account by pressing the 
-        following <a href="#"> link </a>. 
-        <br>
+        following <a class='email-href' href="#"> link</a>. 
+        <br><br>
         We hope you enjoy using our app. 
     </p>
+    </div>
   </body>
 </html>

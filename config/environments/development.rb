@@ -60,6 +60,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
     address: ENV['SMTP_ADDRESS'],
     port: 587,
@@ -67,7 +68,7 @@ Rails.application.configure do
     user_name: ENV['EMAIL_NAME'],
     password: ENV['EMAIL_PASSWORD'],
     authentication: 'plain',
-    :enable_starttls_auto => true
+    :enable_starttls_auto => true,
   }
 
 
