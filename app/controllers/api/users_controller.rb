@@ -1,10 +1,9 @@
 class Api::UsersController < ApplicationController
-
     def create 
         user = User.new(user_params)
         if user.save
             login(user)
-            UserMailer.verification_email(user).deliver_now
+            UserMailer.verification_email(user).deliver_later
             render json: ['User Logged In'], status: 200
         else 
             render json: user.errors_full_messages, status: 422
