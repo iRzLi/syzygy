@@ -5,6 +5,7 @@
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
+    "@types/jquery": "^3.3.30",
     "babel-loader": "^8.0.5",
     "lodash": "^4.17.11",
     "react": "^16.8.4",

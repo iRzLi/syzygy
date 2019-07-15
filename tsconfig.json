@@ -1,5 +1,14 @@
 {
     "compilerOptions": {
-        "sourceMap": true
+        "outDir": "./dist/",
+        "sourceMap": true,
+        "module": "esnext",
+        "target": "es6",
+        "jsx": "react",
+        "typeRoots": [
+            "./node_modules/@types",
+            "./@types",
+        ],
+        "esModuleInterop": true
     }
 }
