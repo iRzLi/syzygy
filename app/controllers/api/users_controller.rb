@@ -4,7 +4,8 @@ class Api::UsersController < ApplicationController
         if user.save
             login(user)
             UserMailer.verification_email(user).deliver_later
-            render json: ['User Logged In'], status: 200
+            # render json: ['User Logged In'], status: 200
+            render :show
         else 
             render json: user.errors.full_messages, status: 422
         end

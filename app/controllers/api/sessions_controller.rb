@@ -5,7 +5,8 @@ class Api::SessionsController < ApplicationController
 
         if user
             login(user)
-            render json: ['User logged in'], status: 200
+            # render json: ['User logged in'], status: 200
+            render :show
         else 
             render json: ['Log in failed'], status: 422
         end

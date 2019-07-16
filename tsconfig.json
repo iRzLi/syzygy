@@ -9,6 +9,8 @@
             "./node_modules/@types",
             "./@types",
         ],
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "noImplicitAny": false,
+        "allowSyntheticDefaultImports": true
     }
 }

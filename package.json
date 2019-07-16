@@ -45,6 +45,8 @@
   },
   "homepage": "https://github.com/iRzLi/syzygy#readme",
   "devDependencies": {
+    "@types/react": "^16.8.23",
+    "@types/react-dom": "^16.8.4",
     "typescript": "^3.5.3"
   }
 }
