@@ -24,3 +24,10 @@ export const receiveCurrentUser = res => {
         res,
     };
 };
+
+export const validateEmail = (validation: string) => dispatch => {
+    return SessionUtil.validateAccount(validation)
+    // .then(
+    //     res => dispatch(receiveCurrentUser(res))
+    // );
+}

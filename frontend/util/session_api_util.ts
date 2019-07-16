@@ -17,6 +17,13 @@ export const login = (formUser: any) => {
 export const logout = () => {
     return $.ajax({
         method: "DELETE",
-        url: "/api/session"
+        url: "/api/session",
+    });
+};
+
+export const validateAccount = (validation: string) => {
+    return $.ajax({
+        method: "GET",
+        url: `/api/users/email_confirmation/${validation}`,
     });
 };

@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import SplashComponent from './splash/splash';
 import LoginFormComponent from './session/login';
 import SignupFormContainer from './session/signup_container';
+import EmailValidtionContainer from './email/validate_email_container';
 
 
 const App = () => (
@@ -12,6 +13,7 @@ const App = () => (
     <Switch>
         <AuthRoute path="/login" component={LoginFormComponent} />
         <AuthRoute path="/register" component={SignupFormContainer} />
+        <Route path="/validate/:validation_string" component={EmailValidtionContainer} />
         <Route path="/" component={SplashComponent} />
     </Switch>
 );

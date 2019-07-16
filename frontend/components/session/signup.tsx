@@ -1,6 +1,4 @@
 import React from 'react';
-import { merge } from 'lodash';
-import { Link } from 'react-router-dom';
 
 interface TypedProps { }
 
