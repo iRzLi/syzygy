@@ -185,6 +185,7 @@ bower.json
 
 # Ignore uploaded files in development
 /storage/*
+!/storage/screenshots
 !/storage/.keep
 
 ### VisualStudioCode ###
